@@ -1,47 +1,51 @@
-import { Grid2, Typography, TextField, Button } from "@mui/material";
+import { Google } from "@mui/icons-material";
+import { Grid, TextField, Button, Link } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
+import { AuthLayout } from "../layout/AuthLayout";
 
 export const Login = () => {
   return (
-    <Grid2
-      container
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
-      sx={{
-        minHeight: "100vh",
-        backgroundColor: "primary.main",
-        padding: 4,
-      }}
-    >
-      <Grid2
-        item
-        xs={3}
-        sx={{ backgroundColor: "white", padding: 4, borderRadius: 2 }}
-      >
-        <Typography variant="h5" sx={{ mb: 1 }}>
-          Login
-        </Typography>
+    <AuthLayout title="Login">
+      <form>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField
+              label="Email"
+              type="email"
+              fullWidth
+              placeholder="email@email.com"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              label="Password"
+              type="password"
+              fullWidth
+              sx={{ mb: 2 }}
+              placeholder="******"
+            />
+          </Grid>
+        </Grid>
 
-        <form>
-          <TextField
-            label="Email"
-            type="email"
-            fullWidth
-            sx={{ mb: 2 }}
-            placeholder="email@email.com"
-          />
-          <TextField
-            label="Password"
-            type="password"
-            fullWidth
-            sx={{ mb: 2 }}
-            placeholder="******"
-          />
-          <Button variant="contained" color="primary" fullWidth type="submit">
-            Login
-          </Button>
-        </form>
-      </Grid2>
-    </Grid2>
+        <Grid container spacing={2} sx={{ mb: 2 }}>
+          <Grid item xs={12} sm={6}>
+            <Button variant="contained" color="primary" fullWidth type="submit">
+              Login
+            </Button>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Button variant="contained" color="primary" fullWidth type="submit">
+              <Google />
+            </Button>
+          </Grid>
+        </Grid>
+
+        <Grid container direction={"row"} justifyContent={"end"}>
+          <Link component={RouterLink} color="inherit" to="/auth/register">
+            Create account
+          </Link>
+        </Grid>
+      </form>
+    </AuthLayout>
   );
 };
