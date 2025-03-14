@@ -28,16 +28,16 @@ export const Login = () => {
         </Grid>
 
         <Grid container spacing={2} sx={{ mb: 2 }}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={12}>
             <Button variant="contained" color="primary" fullWidth type="submit">
               Login
             </Button>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          {/* <Grid item xs={12} sm={6}>
             <Button variant="contained" color="primary" fullWidth type="submit">
               <Google />
             </Button>
-          </Grid>
+          </Grid> */}
         </Grid>
 
         <Grid container direction={"row"} justifyContent={"end"}>
